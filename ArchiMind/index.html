@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — AI System Architect</title>
+  <style>
+    /* ── Reset ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ── Tokens ── */
+    :root {
+      --bg:        #0b1118;
+      --surface:   #0f1923;
+      --surface2:  #131e2b;
+      --border:    #1e2d3d;
+      --accent:    #06b6d4;
+      --accent-dim:#0e7490;
+      --text:      #e6f7f5;
+      --sub:       #94a3b8;
+      --muted:     #64748b;
+      --success:   #22c55e;
+      --warning:   #f59e0b;
+      --purple:    #a78bfa;
+      --radius:    12px;
+      --max-w:     780px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* ── Google Font ── */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+    /* ── Header ── */
+    .header {
+      background: linear-gradient(135deg, var(--surface) 0%, rgba(6,182,212,0.06) 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 48px 24px 40px;
+      text-align: center;
+    }
+
+    .header-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(6,182,212,0.1);
+      border: 1px solid rgba(6,182,212,0.3);
+      border-radius: 999px;
+      padding: 6px 16px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.5px;
+      margin-bottom: 20px;
+      width: fit-content;
+      height: 24px;
+    }
+
+    .header-logo {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 16px;
+      margin-bottom: 18px;
+      width: 100px;
+      
+    }
+
+    h1 {
+      font-size: clamp(24px, 5vw, 36px);
+      font-weight: 800;
+      background: linear-gradient(90deg, var(--text) 0%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 10px;
+    }
+
+    .header-sub {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .effective-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 6px 14px;
+      font-size: 13px;
+      color: var(--sub);
+      margin-top: 16px;
+    }
+
+    .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--success); flex-shrink: 0; }
+
+    /* ── Layout ── */
+    .container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    /* ── TOC ── */
+    .toc {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px 24px;
+      margin: 36px 0 40px;
+    }
+
+    .toc-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--muted);
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .toc ol {
+      list-style: none;
+      counter-reset: toc;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 16px;
+    }
+
+    @media (max-width: 520px) { .toc ol { grid-template-columns: 1fr; } }
+
+    .toc li { counter-increment: toc; }
+
+    .toc a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--sub);
+      text-decoration: none;
+      font-size: 13px;
+      transition: color 0.15s;
+    }
+
+    .toc a::before {
+      content: counter(toc, decimal-leading-zero);
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--accent);
+      opacity: 0.7;
+      min-width: 22px;
+    }
+
+    .toc a:hover { color: var(--accent); }
+
+    /* ── Sections ── */
+    .section {
+      margin-bottom: 44px;
+      scroll-margin-top: 24px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .section-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 17px;
+      flex-shrink: 0;
+    }
+
+    h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .section-body { color: var(--sub); }
+    .section-body p { margin-bottom: 12px; }
+    .section-body p:last-child { margin-bottom: 0; }
+
+    /* ── Info card ── */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      margin: 16px 0;
+    }
+
+    .card.accent { border-color: rgba(6,182,212,0.3); background: rgba(6,182,212,0.05); }
+    .card.warning { border-color: rgba(245,158,11,0.3); background: rgba(245,158,11,0.05); }
+    .card.success { border-color: rgba(34,197,94,0.3); background: rgba(34,197,94,0.05); }
+
+    /* ── List ── */
+    .pp-list {
+      list-style: none;
+      margin: 10px 0;
+    }
+
+    .pp-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+      color: var(--sub);
+    }
+
+    .pp-list li:last-child { border-bottom: none; }
+
+    .pp-list li::before {
+      content: '→';
+      color: var(--accent);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* ── Data table ── */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 13px;
+    }
+
+    .data-table th {
+      text-align: left;
+      padding: 10px 14px;
+      background: var(--surface2);
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 11px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .data-table th:first-child { border-radius: 8px 0 0 0; }
+    .data-table th:last-child  { border-radius: 0 8px 0 0; }
+
+    .data-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+      color: var(--sub);
+      vertical-align: top;
+    }
+
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+    .tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .tag-no  { background: rgba(34,197,94,0.12);  color: var(--success); }
+    .tag-yes { background: rgba(245,158,11,0.12); color: var(--warning); }
+    .tag-3p  { background: rgba(167,139,250,0.12);color: var(--purple); }
+
+    /* ── Divider ── */
+    hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+
+    /* ── Footer ── */
+    .footer {
+      text-align: center;
+      padding: 32px 24px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer a { color: var(--accent); text-decoration: none; }
+    .footer a:hover { text-decoration: underline; }
+
+    /* ── Contact card ── */
+    .contact-card {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--surface);
+      border: 1px solid rgba(6,182,212,0.25);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      margin-top: 16px;
+    }
+
+    .contact-icon {
+      width: 42px; height: 42px;
+      border-radius: 10px;
+      background: rgba(6,182,212,0.1);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px; flex-shrink: 0;
+    }
+
+    .contact-card a { color: var(--accent); text-decoration: none; font-weight: 600; }
+    .contact-card a:hover { text-decoration: underline; }
+    .contact-card p { color: var(--muted); font-size: 13px; margin: 0; }
+
+    /* ── Highlight ── */
+    strong { color: var(--text); font-weight: 600; }
+    code {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      padding: 1px 7px;
+      border-radius: 5px;
+      font-size: 13px;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════
+       HEADER
+  ═══════════════════════════════════════════════════ -->
+  <header class="header">
+    <div class="header-badge">📋 Legal Document</div>
+    <div>
+        <img class="header-logo" src="https://lh3.googleusercontent.com/d/1aRP1m8RW-0d6lnU3e7eweH5TE8TA5U0H" alt="App Logo"" />
+
+    </div>
+    <h1>Privacy Policy</h1>
+    <p class="header-sub">AI System Architect &nbsp;·&nbsp; <code>app.dynamicdragon.ai_system_architecture</code></p>
+    <div class="effective-badge">
+      <span class="dot"></span>
+      Effective Date: July 13, 2026 &nbsp;·&nbsp; Last Updated: July 13, 2026
+    </div>
+  </header>
+
+  <div class="container">
+
+    <!-- ── Intro card ── -->
+    <div class="card accent" style="margin-top:32px;">
+      <strong>Your privacy matters to us.</strong> This Privacy Policy explains what information
+      AI System Architect collects, how it is used, and your rights as a user. We are committed
+      to transparency and to collecting only what is strictly necessary.
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════
+         TABLE OF CONTENTS
+    ═══════════════════════════════════════════════════ -->
+    <div class="toc">
+      <div class="toc-title">Table of Contents</div>
+      <ol>
+        <li><a href="#s1">Who We Are</a></li>
+        <li><a href="#s2">Information We Collect</a></li>
+        <li><a href="#s3">How We Use Your Information</a></li>
+        <li><a href="#s4">Third-Party Services</a></li>
+        <li><a href="#s5">Advertising (AdMob)</a></li>
+        <li><a href="#s6">Data Storage &amp; Security</a></li>
+        <li><a href="#s7">Data Retention</a></li>
+        <li><a href="#s8">Children's Privacy</a></li>
+        <li><a href="#s9">Your Rights</a></li>
+        <li><a href="#s10">Changes to This Policy</a></li>
+        <li><a href="#s11">Contact Us</a></li>
+      </ol>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════
+         1. WHO WE ARE
+    ═══════════════════════════════════════════════════ -->
+    <div class="section" id="s1">
+      <div class="section-header">
+        <div class="section-icon" style="background:rgba(6,182,212,0.1);">🏢</div>
+        <h2>1. Who We Are</h2>
+      </div>
+      <div class="section-body">
+        <p>
+          <strong>AI System Architect</strong> is a mobile application developed and maintained by
+          <strong>Dynamic Dragon</strong>. The app is available on the Google Play Store under
+          the package name <code>app.dynamicdragon.ai_system_architecture</code>.
+        </p>
+        <p>
+          The app enables users to generate comprehensive software project blueprints using
+          AI technology — including system architecture diagrams, tech stack recommendations,
+          workflow steps, runtime execution flows, interactive UI previews, and curated
+          learning references.
+        </p>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════
+         2. INFORMATION WE COLLECT
+    ═══════════════════════════════════════════════════ -->
+    <div class="section" id="s2">
+      <div class="section-header">
+        <div class="section-icon" style="background:rgba(167,139,250,0.1);">📦</div>
+        <h2>2. Information We Collect</h2>
+      </div>
+      <div class="section-body">
+        <p>We collect the minimum information necessary to provide our service. Here is a full breakdown:</p>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Data Type</th>
+              <th>What It Is</th>
+              <th>Collected?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Project Descriptions</strong></td>
+              <td>Text you enter to describe your project idea</td>
+              <td><span class="tag tag-yes">Sent to AI backend</span></td>
+            </tr>
+            <tr>
+              <td><strong>Generated Blueprints</strong></td>
+              <td>Blueprints saved to local device storage (Hive database)</td>
+              <td><span class="tag tag-yes">Local only</span></td>
+            </tr>
+            <tr>
+              <td><strong>App Usage Counters</strong></td>
+              <td>Number of blueprints/previews generated (stored locally for ad frequency)</td>
+              <td><span class="tag tag-yes">Local only</span></td>
+            </tr>
+            <tr>
+              <td><strong>Ad Identifiers</strong></td>
+              <td>Google Advertising ID (GAID) used by AdMob for personalised ads</td>
+              <td><span class="tag tag-3p">Google AdMob</span></td>
+            </tr>
+            <tr>
+              <td><strong>Device Information</strong></td>
+              <td>Device type, OS version, crash reports (collected by AdMob/Play Services)</td>
+              <td><span class="tag tag-3p">Third-party</span></td>
+            </tr>
+            <tr>
+              <td><strong>Name / Email / Phone</strong></td>
+              <td>Personal identity information</td>
+              <td><span class="tag tag-no">Not collected</span></td>
+            </tr>
+            <tr>
+              <td><strong>Location Data</strong></td>
+              <td>GPS or precise location</td>
+              <td><span class="tag tag-no">Not collected</span></td>
+            </tr>
+            <tr>
+              <td><strong>Camera / Microphone</strong></td>
+              <td>Media capture</td>
+              <td><span class="tag tag-no">Not collected</span></td>
+            </tr>
+            <tr>
+              <td><strong>Contacts / Files</strong></td>
+              <td>On-device contacts or file system access</td>
+              <td><span class="tag tag-no">Not collected</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="card success">
+          <strong>✓ We do not collect, store, or transmit any personally identifiable information (PII).</strong>
+          Your name, email, phone number, and location are never requested or stored.
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════
+         3. HOW WE USE YOUR INFORMATION
+    ═══════════════════════════════════════════════════ -->
+    <div class="section" id="s3">
+      <div class="section-header">
+        <div class="section-icon" style="background:rgba(34,197,94,0.1);">⚙️</div>
+        <h2>3. How We Use Your Information</h2>
+      </div>
+      <div class="section-body">
+        <p>The information we process is used solely for the following purposes:</p>
+        <ul class="pp-list">
+          <li><strong>Blueprint Generation</strong> — Your project description is sent to our AI backend (powered by Groq/LangChain) to generate a blueprint. It is not stored on our servers beyond the duration of the API request.</li>
+          <li><strong>Local Blueprint History</strong> — Generated blueprints are saved on your device using Hive local storage so you can revisit them. This data never leaves your device.</li>
+          <li><strong>Ad Frequency Management</strong> — Usage counters (number of generations per feature) are stored locally in SharedPreferences to determine when to show a rewarded ad. This data is not transmitted to any server.</li>
+          <li><strong>App Functionality</strong> — Internet access is used to communicate with our AI backend and to serve ads via Google AdMob.</li>
+          <li><strong>Update Checks</strong> — On launch, the app queries the Google Play Store API to check if a newer version is available. No user data is sent during this check.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════
+         4. THIRD-PARTY SERVICES
+    ═══════════════════════════════════════════════════ -->
+    <div class="section" id="s4">
+      <div class="section-header">
+        <div class="section-icon" style="background:rgba(245,158,11,0.1);">🔗</div>
+        <h2>4. Third-Party Services</h2>
+      </div>
+      <div class="section-body">
+        <p>Our app integrates the following third-party services. Each has its own privacy policy:</p>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Service</th>
+              <th>Purpose</th>
+              <th>Privacy Policy</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Google AdMob</strong></td>
+              <td>Banner and rewarded ads</td>
+              <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color:var(--accent);">policies.google.com/privacy</a></td>
+            </tr>
+            <tr>
+              <td><strong>Google Play Services</strong></td>
+              <td>Version checks, app distribution</td>
+              <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color:var(--accent);">policies.google.com/privacy</a></td>
+            </tr>
+            <tr>
+              <td><strong>Groq API</strong></td>
+              <td>AI blueprint generation (LLM inference)</td>
+              <td><a href="https://groq.com/privacy-policy/" target="_blank" rel="noopener" style="color:var(--accent);">groq.com/privacy-policy</a></td>
+            </tr>
+            <tr>
+              <td><strong>arXiv / Semantic Scholar / CrossRef / CORE / Tavily / GitHub</strong></td>
+              <td>Research paper and source link retrieval (RAG pipeline)</td>
+              <td>Each operates under its own respective privacy policy</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          We do not control the data practices of these third-party services.
+          We encourage you to review their respective privacy policies.
+        </p>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════
+         5. ADVERTISING (ADMOB)
+    ═══════════════════════════════════════════════════ -->
+    <div class="section" id="s5">
+      <div class="section-header">
+        <div class="section-icon" style="background:rgba(251,146,60,0.1);">📢</div>
+        <h2>5. Advertising (Google AdMob)</h2>
+      </div>
+      <div class="section-body">
+        <p>
+          This app uses <strong>Google AdMob</strong> to display advertisements. AdMob may collect
+          and use your <strong>Google Advertising ID (GAID)</strong> and device information to serve
+          personalised or non-personalised ads.
+        </p>
+
+        <div class="card warning">
+          <strong>Ad Types Used:</strong>
+          <ul class="pp-list" style="margin-top:10px;">
+            <li><strong>Banner Ads</strong> — Small 320×50 banners displayed at the top or bottom of screens. They never overlap or block core content.</li>
+            <li><strong>Rewarded Video Ads</strong> — Shown voluntarily every 3rd blueprint generation and every 5th UI preview or flow generation. Watching unlocks the feature. If an ad is not available, the feature proceeds without one.</li>
+          </ul>
+        </div>
+
+        <p>
+          Google's use of advertising cookies and identifiers is governed by
+          <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener" style="color:var(--accent);">Google's Advertising Policy</a>.
+          You can opt out of personalised advertising by adjusting your device settings:
+          <strong>Settings → Google → Ads → Delete Advertising ID</strong> (Android 12+) or
+          <strong>Opt out of Ads Personalisation</strong> (Android &lt;12).
+        </p>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════
+         6. DATA STORAGE & SECURITY
+    ═══════════════════════════════════════════════════ -->
+    <div class="section" id="s6">
+      <div class="section-header">
+        <div class="section-icon" style="background:rgba(6,182,212,0.1);">🔒</div>
+        <h2>6. Data Storage &amp; Security</h2>
+      </div>
+      <div class="section-body">
+        <p>
+          All user-generated content (blueprints, preferences, usage counters) is stored
+          <strong>locally on your device</strong> using:
+        </p>
+        <ul class="pp-list">
+          <li><strong>Hive</strong> — A lightweight NoSQL database for storing blueprint history. Data remains on your device and is deleted when you uninstall the app.</li>
+          <li><strong>SharedPreferences</strong> — Used for lightweight key-value storage (ad frequency counters, app settings). Also device-local.</li>
+        </ul>
+        <p>
+          <strong>API requests</strong> (blueprint generation, UI preview, runtime flow, update checks)
+          are transmitted over <strong>HTTPS</strong> (TLS encryption). Project description text
+          is sent to our backend solely to process your request and is not logged or stored
+          beyond the duration of the API call.
+        </p>
+        <div class="card success">
+          <strong>✓ We do not operate any user database.</strong> No account system, no login,
+          no server-side storage of your data.
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════
+         7. DATA RETENTION
+    ═══════════════════════════════════════════════════ -->
+    <div class="section" id="s7">
+      <div class="section-header">
+        <div class="section-icon" style="background:rgba(34,197,94,0.1);">🗓️</div>
+        <h2>7. Data Retention</h2>
+      </div>
+      <div class="section-body">
+        <ul class="pp-list">
+          <li><strong>Blueprint history</strong> is stored indefinitely on your device until you delete individual entries within the app or uninstall the app.</li>
+          <li><strong>Usage counters</strong> (for ad frequency) persist until the app is uninstalled.</li>
+          <li><strong>API request data</strong> (your project descriptions) is not retained on our servers. Each request is stateless.</li>
+          <li><strong>Ad data</strong> is retained according to Google AdMob's own data retention policies.</li>
+        </ul>
+        <p>
+          You can delete your local data at any time by uninstalling the app or by clearing the
+          app's data in your device settings: <strong>Settings → Apps → AI System Architect → Storage → Clear Data</strong>.
+        </p>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════
+         8. CHILDREN'S PRIVACY
+    ═══════════════════════════════════════════════════ -->
+    <div class="section" id="s8">
+      <div class="section-header">
+        <div class="section-icon" style="background:rgba(167,139,250,0.1);">👶</div>
+        <h2>8. Children's Privacy</h2>
+      </div>
+      <div class="section-body">
+        <p>
+          AI System Architect is <strong>not directed at children under the age of 13</strong>
+          (or under 16 in the European Economic Area). We do not knowingly collect personal
+          information from children.
+        </p>
+        <p>
+          If you are a parent or guardian and believe your child has provided us with personal
+          information, please contact us immediately at the address below and we will take
+          steps to delete such information.
+        </p>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════
+         9. YOUR RIGHTS
+    ═══════════════════════════════════════════════════ -->
+    <div class="section" id="s9">
+      <div class="section-header">
+        <div class="section-icon" style="background:rgba(6,182,212,0.1);">⚖️</div>
+        <h2>9. Your Rights</h2>
+      </div>
+      <div class="section-body">
+        <p>
+          Depending on your location, you may have the following rights regarding your data:
+        </p>
+        <ul class="pp-list">
+          <li><strong>Right to Access</strong> — Request a copy of any data we hold about you. (Since we hold no server-side user data, this primarily concerns AdMob data — contact Google directly.)</li>
+          <li><strong>Right to Deletion</strong> — Delete your local data by clearing app data or uninstalling the app. For AdMob data, use your device's "Delete Advertising ID" setting.</li>
+          <li><strong>Right to Opt-Out of Personalised Ads</strong> — Adjust your Google Ad settings as described in Section 5.</li>
+          <li><strong>Right to Data Portability</strong> — Export your blueprints using the in-app Share / Export feature, which creates a ZIP archive of your blueprints.</li>
+          <li><strong>GDPR (EU) / CCPA (California)</strong> — If you are in the EU or California, the above rights apply under GDPR and CCPA respectively. Contact us to exercise any of these rights.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════
+         10. CHANGES TO THIS POLICY
+    ═══════════════════════════════════════════════════ -->
+    <div class="section" id="s10">
+      <div class="section-header">
+        <div class="section-icon" style="background:rgba(245,158,11,0.1);">🔄</div>
+        <h2>10. Changes to This Policy</h2>
+      </div>
+      <div class="section-body">
+        <p>
+          We may update this Privacy Policy from time to time. When we do, we will update the
+          <strong>Last Updated</strong> date at the top of this page. Continued use of the app
+          after changes constitutes your acceptance of the updated policy.
+        </p>
+        <p>
+          For significant changes, we will provide notice via an in-app notification or
+          a Play Store update description.
+        </p>
+        <div class="card">
+          We encourage you to review this page periodically.
+          This page is permanently hosted at a public URL provided to Google Play during app submission.
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════
+         11. CONTACT US
+    ═══════════════════════════════════════════════════ -->
+    <div class="section" id="s11">
+      <div class="section-header">
+        <div class="section-icon" style="background:rgba(6,182,212,0.1);">✉️</div>
+        <h2>11. Contact Us</h2>
+      </div>
+      <div class="section-body">
+        <p>
+          If you have any questions, concerns, or requests regarding this Privacy Policy
+          or your data, please contact us:
+        </p>
+        <div class="contact-card">
+          <div class="contact-icon">✉️</div>
+          <div>
+            <a href="mailto:dynamic.dragon.dev@gmail.com">dynamic.dragon.dev@gmail.com</a>
+            <p>Dynamic Dragon · AI System Architect</p>
+            <p>We aim to respond within 5 business days.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr />
+
+    <!-- ── Summary banner ── -->
+    <div class="card accent" style="text-align:center; padding:28px;">
+      <div style="font-size:28px; margin-bottom:10px;">🛡️</div>
+      <strong style="font-size:16px; display:block; margin-bottom:8px;">Our Privacy Commitment</strong>
+      <p style="color:var(--sub); font-size:14px; max-width:480px; margin:0 auto;">
+        No personal accounts. No server-side user data. No tracking beyond what AdMob requires.
+        Your blueprints live on your device and belong to you.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <p>
+      © 2026 Dynamic Dragon · AI System Architect ·
+      <code>app.dynamicdragon.ai_system_architecture</code>
+    </p>
+    <p style="margin-top:8px;">
+      <a href="mailto:privacy@dynamicdragon.app">privacy@dynamicdragon.app</a>
+    </p>
+  </footer>
+
+</body>
+</html>
