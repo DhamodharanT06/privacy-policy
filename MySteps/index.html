@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Privacy Policy — MySteps</title>
+<style>
+  :root {
+    --pine: #0B2019;
+    --surface: #12332A;
+    --surface-high: #1B4536;
+    --outline: #2A5A48;
+    --ember: #FF6B3D;
+    --sun: #FFC93C;
+    --mint: #7CE3B0;
+    --text: #F1F5E9;
+    --muted: #8FB0A0;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--pine);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+  }
+
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 48px 20px 80px;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 8px;
+  }
+
+  .app-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    object-fit: cover;
+    background: var(--surface-high);
+    border: 1px solid var(--outline);
+    flex-shrink: 0;
+  }
+
+  .app-name {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin: 0;
+  }
+
+  .app-tagline {
+    color: var(--muted);
+    font-size: 14px;
+    margin: 2px 0 0;
+  }
+
+  h1.title {
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: -0.8px;
+    margin: 36px 0 6px;
+  }
+
+  .updated {
+    color: var(--muted);
+    font-size: 13.5px;
+    margin-bottom: 28px;
+  }
+
+  .updated strong { color: var(--sun); font-weight: 700; }
+
+  nav.toc {
+    background: var(--surface);
+    border: 1px solid var(--outline);
+    border-radius: 20px;
+    padding: 18px 22px;
+    margin-bottom: 36px;
+  }
+
+  nav.toc p {
+    margin: 0 0 10px;
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    color: var(--muted);
+  }
+
+  nav.toc ol {
+    margin: 0;
+    padding-left: 20px;
+    columns: 2;
+    column-gap: 24px;
+  }
+
+  nav.toc li { margin-bottom: 6px; break-inside: avoid; }
+
+  nav.toc a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 14px;
+  }
+
+  nav.toc a:hover { color: var(--sun); }
+
+  section {
+    background: var(--surface);
+    border: 1px solid var(--outline);
+    border-radius: 24px;
+    padding: 26px 26px 6px;
+    margin-bottom: 18px;
+  }
+
+  section h2 {
+    font-size: 18px;
+    font-weight: 800;
+    margin: 0 0 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  section h2 .num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 9px;
+    background: var(--ember);
+    color: var(--pine);
+    font-size: 13px;
+    font-weight: 800;
+    flex-shrink: 0;
+  }
+
+  section p, section li {
+    color: var(--text);
+    font-size: 15px;
+  }
+
+  section ul { padding-left: 20px; margin: 0 0 16px; }
+  section li { margin-bottom: 8px; }
+  section p { margin: 0 0 16px; }
+
+  .pill-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .pill {
+    background: var(--surface-high);
+    border-radius: 30px;
+    padding: 6px 14px;
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--mint);
+  }
+
+  .highlight {
+    background: var(--surface-high);
+    border-left: 3px solid var(--sun);
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+
+  .highlight strong { color: var(--text); }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 16px;
+    font-size: 13.5px;
+  }
+
+  th, td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--outline);
+    vertical-align: top;
+  }
+
+  th {
+    color: var(--muted);
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+
+  a { color: var(--sun); }
+
+  .contact-card {
+    background: var(--ember);
+    border-radius: 24px;
+    padding: 26px;
+    margin: 28px 0 10px;
+    color: var(--pine);
+  }
+
+  .contact-card h2 {
+    color: var(--pine);
+    margin: 0 0 6px;
+    font-size: 19px;
+    font-weight: 800;
+  }
+
+  .contact-card p { color: var(--pine); margin: 0 0 4px; font-size: 14.5px; }
+  .contact-card a { color: var(--pine); font-weight: 700; text-decoration: underline; }
+
+  footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 12.5px;
+    margin-top: 40px;
+  }
+
+  @media (max-width: 520px) {
+    nav.toc ol { columns: 1; }
+    section { padding: 22px 18px 4px; border-radius: 20px; }
+    h1.title { font-size: 25px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <!--
+      Replace "icon.png" below with your app icon.
+      A Google Drive share link will NOT work directly as an <img> src —
+      browsers (and the Play Store's crawler) need a direct image URL, not
+      a Drive "share" page. Easiest options:
+        1) Put the actual icon.png file in the same folder as this HTML
+           file when you upload it (e.g. same GitHub Pages / hosting
+           folder), and leave the src as "icon.png" — simplest, no link
+           conversion needed.
+        2) Or host the icon anywhere that gives a direct image URL (ends
+           in .png/.jpg and opens the image itself, not a viewer page)
+           and put that full URL in src="" below.
+    -->
+           
+    <img class="app-icon" src="https://lh3.googleusercontent.com/d/1IUCfRaegS1agb2xaRgS5vyek2h6Dgc1-" alt="MySteps app icon">
+    <div>
+      <p class="app-name">MySteps</p>
+      <p class="app-tagline">Step tracking, on your device</p>
+    </div>
+  </header>
+
+  <h1 class="title">Privacy Policy</h1>
+  <p class="updated">Last updated: <strong>October 2026</strong> &nbsp;·&nbsp; Applies to the MySteps Android app</p>
+
+  <nav class="toc">
+    <p>On this page</p>
+    <ol>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#data-we-collect">Data we collect</a></li>
+      <li><a href="#permissions">Permissions we ask for</a></li>
+      <li><a href="#how-we-use">How we use your data</a></li>
+      <li><a href="#storage">Where your data is stored</a></li>
+      <li><a href="#third-party">Third-party services (ads)</a></li>
+      <li><a href="#retention">Data retention & deletion</a></li>
+      <li><a href="#sharing">Data sharing</a></li>
+      <li><a href="#children">Children's privacy</a></li>
+      <li><a href="#security">Security</a></li>
+      <li><a href="#choices">Your choices & controls</a></li>
+      <li><a href="#changes">Changes to this policy</a></li>
+      <li><a href="#contact">Contact us</a></li>
+    </ol>
+  </nav>
+
+  <section id="overview">
+    <h2><span class="num">1</span>Overview</h2>
+    <p>
+      MySteps ("the app", "we", "our") is a step-count and fitness tracking
+      app published by <strong>Dynamic Dragon</strong>. This policy explains
+      what information the app accesses, how it's used, and the choices you
+      have. The short version: your step data is tracked and stored
+      <strong>entirely on your own device</strong> — we don't run servers
+      that collect or store your personal fitness data.
+    </p>
+    <div class="highlight">
+      <strong>In one sentence:</strong> MySteps reads your phone's motion
+      sensors to count steps locally, keeps that data on your device, and
+      shows ads through Google AdMob to support the app being free.
+    </div>
+  </section>
+
+  <section id="data-we-collect">
+    <h2><span class="num">2</span>Data we collect</h2>
+    <div class="pill-row">
+      <span class="pill">Step &amp; motion data</span>
+      <span class="pill">Goal &amp; profile settings</span>
+      <span class="pill">Advertising identifiers</span>
+    </div>
+    <table>
+      <tr><th>Data</th><th>What it is</th><th>Leaves your device?</th></tr>
+      <tr>
+        <td>Step count &amp; motion data</td>
+        <td>Steps, cadence, and movement pattern read from your phone's step
+        counter and accelerometer sensors.</td>
+        <td>No</td>
+      </tr>
+      <tr>
+        <td>Profile settings</td>
+        <td>Your step goal, height and weight (used only to estimate distance
+        and calories), and notification preferences.</td>
+        <td>No</td>
+      </tr>
+      <tr>
+        <td>Advertising identifier</td>
+        <td>A resettable device ad ID, used by Google AdMob to serve the
+        reward ad on the FAQ page.</td>
+        <td>Yes — shared with Google AdMob only</td>
+      </tr>
+    </table>
+    <p>
+      We do not collect your name, email address, location, contacts,
+      photos, or any other personal information through the app itself.
+    </p>
+  </section>
+
+  <section id="permissions">
+    <h2><span class="num">3</span>Permissions we ask for</h2>
+    <table>
+      <tr><th>Permission</th><th>Why MySteps needs it</th></tr>
+      <tr><td>Activity recognition</td><td>To read your phone's step-counter sensor, which Android treats as sensitive motion data.</td></tr>
+      <tr><td>Notifications</td><td>To show goal-progress alerts (if you turn them on) and the background step-counting notification.</td></tr>
+      <tr><td>Run in the foreground / background</td><td>So step counting continues while the app isn't open, if you enable this in Settings.</td></tr>
+      <tr><td>Receive boot completed</td><td>So background counting can resume automatically after your phone restarts, if you had it turned on.</td></tr>
+      <tr><td>Internet &amp; network state</td><td>Needed only to load the optional reward ad on the FAQ page. Step tracking itself works fully offline.</td></tr>
+    </table>
+    <p>Every permission above can be reviewed or revoked at any time from your device's Settings &gt; Apps &gt; MySteps &gt; Permissions.</p>
+  </section>
+
+  <section id="how-we-use">
+    <h2><span class="num">4</span>How we use your data</h2>
+    <ul>
+      <li>To count and display your daily steps, distance, calories, and active minutes.</li>
+      <li>To track progress toward the step goal you set, and your day-to-day streak.</li>
+      <li>To show the optional home-screen widget and goal-progress notifications you choose to enable.</li>
+      <li>To display a rewarded ad (via Google AdMob) when you choose to reveal an FAQ answer.</li>
+    </ul>
+    <p>We do not use your step or motion data for advertising targeting, profiling, or any purpose beyond showing it back to you inside the app.</p>
+  </section>
+
+  <section id="storage">
+    <h2><span class="num">5</span>Where your data is stored</h2>
+    <p>
+      All step history, goals, and profile settings are stored locally in
+      the app's private storage on your device, using Android's standard
+      app-storage mechanism. MySteps does not operate a backend server, and
+      your step data is never uploaded to us or to any cloud service we
+      control. Up to 90 days of daily history is kept on-device; older days
+      are automatically trimmed to save space.
+    </p>
+  </section>
+
+  <section id="third-party">
+    <h2><span class="num">6</span>Third-party services (ads)</h2>
+    <p>
+      MySteps uses <strong>Google AdMob</strong> to show a rewarded video ad
+      when you choose to unlock an FAQ answer. AdMob may collect an
+      advertising identifier and basic technical data (such as device type
+      and general ad-interaction events) to serve and measure ads, under
+      Google's own privacy policy:
+      <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.
+    </p>
+    <p>
+      No other analytics, crash-reporting, or advertising SDKs are used in
+      this app.
+    </p>
+  </section>
+
+  <section id="retention">
+    <h2><span class="num">7</span>Data retention & deletion</h2>
+    <p>
+      Your data stays on your device for as long as the app is installed.
+      Uninstalling MySteps permanently deletes all locally stored step
+      history, goals, and settings — we hold no copy of it elsewhere to
+      delete on our end. You can also clear today's count at any time from
+      Settings &gt; Test tools &gt; Reset today.
+    </p>
+  </section>
+
+  <section id="sharing">
+    <h2><span class="num">8</span>Data sharing</h2>
+    <p>
+      We do not sell your data. The only data shared with a third party is
+      the advertising identifier shared with Google AdMob, solely to serve
+      the reward ad described above. We do not share your step, health, or
+      profile data with any advertiser, analytics provider, or other third
+      party.
+    </p>
+  </section>
+
+  <section id="children">
+    <h2><span class="num">9</span>Children's privacy</h2>
+    <p>
+      MySteps is not directed at children under 13, and we do not knowingly
+      collect personal information from children. If you believe a child
+      has provided personal information through this app, please contact us
+      using the details below so we can address it.
+    </p>
+  </section>
+
+  <section id="security">
+    <h2><span class="num">10</span>Security</h2>
+    <p>
+      Since your data stays on your device, its security depends largely on
+      your own device's protections (screen lock, OS updates, etc.). We
+      follow standard Android practices for storing app data privately, so
+      it isn't accessible to other apps on your device.
+    </p>
+  </section>
+
+  <section id="choices">
+    <h2><span class="num">11</span>Your choices & controls</h2>
+    <ul>
+      <li>Turn background step counting on or off anytime in Settings.</li>
+      <li>Turn goal-progress notifications on/off, and choose your own thresholds.</li>
+      <li>Revoke the motion, notification, or network permissions from your device's app settings at any time.</li>
+      <li>Reset your step count or uninstall the app to remove all locally stored data.</li>
+    </ul>
+  </section>
+
+  <section id="changes">
+    <h2><span class="num">12</span>Changes to this policy</h2>
+    <p>
+      We may update this policy occasionally, for example if we add a new
+      feature that changes what data the app accesses. The "Last updated"
+      date at the top of this page will always reflect the latest version.
+      Continued use of the app after a change means you accept the updated
+      policy.
+    </p>
+  </section>
+
+  <div class="contact-card">
+    <h2 id="contact">13 · Contact us</h2>
+    <p>If you have any questions about this privacy policy or your data, reach out:</p>
+    <p>Developer: <strong>Dynamic Dragon</strong></p>
+    <p>Email: <a href="mailto:dynamic.dragon.dev@gmail.com">dynamic.dragon.dev@gmail.com</a></p>
+  </div>
+
+  <footer>
+    © 2026 Dynamic Dragon · MySteps Privacy Policy
+  </footer>
+
+</div>
+</body>
+</html>
